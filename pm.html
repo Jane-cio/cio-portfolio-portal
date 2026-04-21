@@ -1256,6 +1256,7 @@ const MIGRATE_KEYS = [
 // ══════════════════════════════════════════════════════════════
 // GAS_URL is read dynamically so it works immediately after Save & Test without reload
 function GAS_URL() { return localStorage.getItem('cio_gas_url') || ''; }
+(function(){ if(!localStorage.getItem('cio_gas_url')) localStorage.setItem('cio_gas_url','https://script.google.com/macros/s/AKfycbx_zbVRL9RR_erz2e7LAR3oNzejQqUCinXiTjEomFndZ0_Bp6_tMd4Vv4AjbDQ8OVKonw/exec'); })();
 
 const Sync = {
   // ── Is Sheets sync enabled? ──
@@ -5236,7 +5237,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     const savedUrl = GAS_URL();
     const urlInput = document.getElementById('gasUrlInput');
-    if(urlInput) urlInput.value = savedUrl;
+    if(urlInput) urlInput.value = savedUrl || 'https://script.google.com/macros/s/AKfycbx_zbVRL9RR_erz2e7LAR3oNzejQqUCinXiTjEomFndZ0_Bp6_tMd4Vv4AjbDQ8OVKonw/exec';
     const modeLabel = document.getElementById('syncModeLabel');
     if(modeLabel) {
       modeLabel.innerHTML = GAS_URL()
