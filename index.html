@@ -1249,6 +1249,7 @@ const MIGRATE_KEYS = [
 // ══════════════════════════════════════════════════════════════
 // GAS_URL is read dynamically so it works immediately after Save & Test without reload
 function GAS_URL() { return localStorage.getItem('cio_gas_url') || ''; }
+(function(){ if(!localStorage.getItem('cio_gas_url')) localStorage.setItem('cio_gas_url','https://script.google.com/macros/s/AKfycbx_zbVRL9RR_erz2e7LAR3oNzejQqUCinXiTjEomFndZ0_Bp6_tMd4Vv4AjbDQ8OVKonw/exec'); })();
 
 const Sync = {
   // ── Is Sheets sync enabled? ──
@@ -3551,6 +3552,22 @@ function editDemand(id){
   updateDemandScore();
   document.getElementById('demandModal').classList.add('open');
 }
+// ── BU PORTAL: Auto-sync demand submissions to Google Sheets ──
+const BU_GAS_URL = 'https://script.google.com/macros/s/AKfycbx_zbVRL9RR_erz2e7LAR3oNzejQqUCinXiTjEomFndZ0_Bp6_tMd4Vv4AjbDQ8OVKonw/exec';
+function buPushDemand(demandObj) {
+  try {
+    const params = new URLSearchParams({
+      action: 'create',
+      tab: 'demands',
+      data: JSON.stringify(demandObj)
+    });
+    fetch(BU_GAS_URL + '?' + params.toString())
+      .then(r=>r.json())
+      .then(d=>{ if(d.ok) console.log('Demand synced to Sheets:', d.id); })
+      .catch(e=>console.warn('Sheets sync skipped (offline?):', e));
+  } catch(e) { console.warn('buPushDemand error:', e); }
+}
+
 function saveDemand(){
   const title=document.getElementById('df_title').value.trim();
   if(!title){showToast('Title is required');return;}
@@ -3601,6 +3618,8 @@ function saveDemand(){
   // Sync to Sheets
   const savedD = editingDemandId ? state.demands.find(x=>x.id===editingDemandId) : state.demands[state.demands.length-1];
   if(Sync.enabled()) Sync.save('demands', savedD, !editingDemandId);
+  // Always push new demands to Sheets via BU portal GAS URL
+  if(!editingDemandId && savedD) buPushDemand(savedD);
 }
 function deleteDemand(){
   if(!editingDemandId)return;
@@ -5277,4 +5296,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 </body>
-</html>  
+</html> 
