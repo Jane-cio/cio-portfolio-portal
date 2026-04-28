@@ -493,7 +493,7 @@
     <div class="page-title">Weekly Status Report</div>
     <span style="font-size:11.5px;color:var(--text-muted);">📖 Read-only · Prepared by CIO Office Portfolio Management Team</span>
   </div>
-  <div class="page-subtitle" id="weeklySubtitle">Week of Apr 6–10, 2026 · Prepared by: CIO Office Portfolio Management Team · Distribution: CIO + BU Stakeholders</div>
+  <div class="page-subtitle" id="weeklySubtitle">Week of Apr 20–24, 2026 · Prepared by: CIO Office Portfolio Management Team · Distribution: CIO + BU Stakeholders</div>
   <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:5px;padding:10px 14px;font-size:12px;color:#1e40af;margin-bottom:14px;font-weight:500;">
     ⚠ <b>Correlation notice:</b> Gen2 SW products (Installer App, Fleet Manager, Q.Home App) share hardware milestones — any delay in one affects the full E-02 system schedule. <b>Installer App currently 🔴 At Risk — Alpha target Mar 31.</b>
   </div>
@@ -1241,7 +1241,7 @@
 const STORAGE_KEY = 'cio_portfolio_v5';
 
 // DATA_VERSION — bump whenever demand entries or embedded defaults change.
-const DATA_VERSION = '2026.04.10.v1';
+const DATA_VERSION = '2026.04.24.v1';
 
 // Keys to scan when migrating from older versions
 const MIGRATE_KEYS = [
@@ -1403,7 +1403,7 @@ const PHASE_COLORS = {
 const PHASE_OPTIONS = ['—','Discovery','Dev','Beta','GA','Plan','Merge','EOL','Enhance','Blocked','Maint'];
 
 const DEFAULT_DATA = {
-  lastUpdated: '2026-04-10T09:00:00.000Z',
+  lastUpdated: '2026-04-24T09:00:00.000Z',
     projects: [
     {
       id:'p1',
@@ -2177,30 +2177,30 @@ const DEFAULT_DATA = {
     projId:'B-08',
     name:'Enfin Data Integrity - DCA/FEOC TF',
     cat:'Business Module',
-    progress:'7 tickets in active development; 3 tickets merged. Remaining on hold pending business decision (TBD).',
-    blockers:'Business decision pending on on-hold tickets.',
-    dependency:'Business team decision on on-hold tickets.',
-    decision:'Last week of delivery - all tickets created and monitored; adjusted based on business needs.',
-    risk:'On-hold tickets unresolved.',
+    progress:'49 tickets from biz and tech mapped. Ticket review and prioritization meeting rescheduled to Apr 27 by Enfin.',
+    blockers:'Review meeting rescheduled — ticket prioritization not yet completed.',
+    dependency:'Enfin team participation in Apr 27 ticket review meeting.',
+    decision:'Target timeline set per item to be followed after Apr 27 review.',
+    risk:'Delay in ticket prioritization may impact delivery timeline.',
     owner:'Sunil',
     target:'Q2 2026',
-    focus:'Monitor business decision; complete in-progress development.',
+    focus:'Complete ticket review and prioritization on Apr 27; set per-item target timelines.',
     jira:'enfin.atlassian.net',
-    status:'On Track'
+    status:'Monitoring'
   },
   {
     id:'w1b',
     projId:'B-11-03',
     name:'Project Clarity (Enfin)',
     cat:'Business Module',
-    progress:'Detailed feedback from Don Kim and David Jang received. Strong directional alignment - minor tweaks only. PA team provided comments in Customer Journey Miro board.',
+    progress:'High-level sizing and cost estimation completed with CK team. Working through sizing and cost estimations with biz teams.',
     blockers:'',
-    dependency:'Single-threaded ownership decision; PA team comment review.',
-    decision:'Determine single-threaded ownership by working with key business leads.',
-    risk:'Determine if feedback is sufficient or additional input needed.',
+    dependency:'Continued engagement with biz teams and CK teams on sizing.',
+    decision:'',
+    risk:'Single-threaded ownership still to be confirmed.',
     owner:'Sunil',
     target:'Apr 2026',
-    focus:'Review PA team Miro comments; determine next steps; confirm ownership.',
+    focus:'Work through sizing and cost estimations with biz teams and CK teams.',
     jira:'PB Jira Board',
     status:'On Track'
   },
@@ -2209,62 +2209,94 @@ const DEFAULT_DATA = {
     projId:'B-06',
     name:'QDD - Rootstock Implementation',
     cat:'Business Module',
-    progress:'BPR workshop held Apr 7-9. Rootstock completed 3-day on-site BPR in SF. Product requirements for Rootstock, Salesforce, and NetSuite touchpoints communicated.',
-    blockers:'Rootstock team needs to share updates or risks to project timeline and budget.',
-    dependency:'Rootstock finalizing requirements. Alignment needed across Salesforce, NetSuite, Rootstock.',
-    decision:'Qcells leadership participation needed for program management oversight.',
-    risk:'Risk of misalignment in program management across Salesforce, NetSuite, Rootstock.',
+    progress:'QDD proposed to refocus Rootstock for inventory management functions with earlier target date. Biz alignment scheduled for Apr 27. Project momentum and timelines at risk.',
+    blockers:'Biz stakeholders not yet aligned on refocus proposal.',
+    dependency:'Biz alignment meeting Apr 27 to confirm refocus scope and timeline.',
+    decision:'Alignment needed among biz stakeholders on Rootstock scope refocus.',
+    risk:'Project momentum and timelines at risk pending alignment.',
     owner:'Sunil',
-    target:'Sep 1 2026',
-    focus:'Rootstock to share requirements and risks; progress to solution design.',
+    target:'TBD (refocus pending)',
+    focus:'Biz alignment meeting Apr 27; confirm scope refocus and new target date.',
+    jira:'PB Jira Board',
+    status:'Monitoring'
+  },
+  {
+    id:'w3a',
+    projId:'C-02',
+    name:'Proposal Service - HQCA Solo Contract',
+    cat:'Consolidation',
+    progress:'HQCA Solo contract extension work in progress. Alignment extended to Apr 30.',
+    blockers:'',
+    dependency:'Contract extension completion by Apr 30.',
+    decision:'',
+    risk:'Contract delay cascades to dev start.',
+    owner:'Sunil',
+    target:'June 2026',
+    focus:'Complete HQCA Solo contract extension by Apr 30.',
     jira:'PB Jira Board',
     status:'On Track'
   },
   {
-    id:'w3',
+    id:'w3b',
     projId:'C-02',
-    name:'Proposal Service (Solo / Cosmos)',
+    name:'Proposal Service - Enfin Commercial Agreement',
     cat:'Consolidation',
-    progress:'Solo responded Apr 3. EnFin expected to respond by Apr 10. HQCA Solo contract extension being addressed. Dev start pending contract; June launch targeted.',
-    blockers:'Dev start dependent on contract execution. EnFin response expected Apr 10.',
-    dependency:'EnFin response by Apr 10; HQCA Solo contract extension completion.',
-    decision:'Address HQCA Solo contract extension this week.',
-    risk:'Contract delay continues to push dev start and June launch.',
+    progress:'Commercial agreement still pending due to ongoing redlines. Target review timeline was Apr 24. Revised timeline: earliest enablement early July.',
+    blockers:'EnFin commercial agreement not executed — ongoing redlines.',
+    dependency:'EnFin redline resolution and commercial agreement execution.',
+    decision:'Exec awareness: enablement target revised to early July based on current progress.',
+    risk:'Each week of delay pushes July target further.',
     owner:'Sunil',
-    target:'June 2026 (revised)',
-    focus:'Await EnFin response; advance contract extension.',
+    target:'Early July 2026 (revised)',
+    focus:'Resolve remaining redlines; execute commercial agreement.',
     jira:'PB Jira Board',
-    status:'Monitoring'
+    status:'Blocked'
   },
   {
     id:'w4',
     projId:'C-01',
     name:'Cosmos - Strategy and Roadmap',
     cat:'Consolidation',
-    progress:'Alignment meetings with BU heads completed. Value props and use case discussions are ongoing.',
+    progress:'Value props and use case discussions are ongoing. Planning stage.',
     blockers:'',
-    dependency:'Continued BU head engagement on value props and use cases.',
+    dependency:'Continued BU head engagement.',
     decision:'',
-    risk:'Strategy delay cascades to Cosmos sub-projects.',
+    risk:'Strategy delay cascades to sub-projects.',
     owner:'Sunil',
     target:'Q4 2026',
-    focus:'Continue value props and use case discussions with BU heads.',
+    focus:'Continue value props and use case discussions.',
     jira:'PB Jira Board',
     status:'Monitoring'
+  },
+  {
+    id:'w4b',
+    projId:'B-04',
+    name:'New Homes Installer Portal',
+    cat:'Business Module',
+    progress:'New Homes Portal design workstream formally kicked off and sized for fast-tracked design delivery. Initial installer partner portal design task created and started under New Homes design epic.',
+    blockers:'',
+    dependency:'Design epic progress.',
+    decision:'',
+    risk:'',
+    owner:'Sunil',
+    target:'TBD',
+    focus:'Advance installer partner portal design under New Homes design epic.',
+    jira:'PB Jira Board',
+    status:'On Track'
   },
   {
     id:'w5',
     projId:'E-02',
     name:'Gen2 - Installer App',
     cat:'HW-System Product',
-    progress:'Pre-Alpha (Solar) testing completed; minor fixes in progress. 10 commissioning features in progress. Outstanding requirements under development. Two-week sprints through Jun 30.',
-    blockers:'MI GEN2 impact (+5w Mobile, +2w Fleet, Backend) may require Alpha/Beta scope changes. EMS Error Codes workaround in discussion.',
-    dependency:'Beta scope lock; EMS Error Codes workaround; Alpha/Beta priority items locked.',
-    decision:'Alpha/Beta priority items must be locked to avoid schedule risk.',
-    risk:'Scope changes risk Alpha and Beta schedule milestones.',
+    progress:'Alpha delayed. Validation feature impacted by delayed requirements (finalized Apr 17), pushing F/W completion to Apr 27, App code completion to Apr 30, SQA to May 15. Auto-trigger validation on track for Alpha. Full validation planned for mid-Alpha by May 15. Beta scope work begun — remaining features must be finalized by mid-May for June code freeze.',
+    blockers:'Validation feature delayed due to late requirements finalization (Apr 17). EMS error-code v1 delivery Apr 27 dependency.',
+    dependency:'EMS error-code v1 delivery Apr 27; Alpha extension may be requested.',
+    decision:'SQ and SE verification integration being evaluated to recover ~2 weeks.',
+    risk:'Alpha delayed. Beta June code freeze at risk if features not finalized by mid-May.',
     owner:'Jason',
     target:'Beta Jun; GA Dec 2026',
-    focus:'Complete minor fixes; advance commissioning features; lock outstanding requirements.',
+    focus:'Complete F/W Apr 27; App code Apr 30; SQA May 15. Lock Beta features by mid-May.',
     jira:'CPO Jira Board',
     status:'Monitoring'
   },
@@ -2273,14 +2305,14 @@ const DEFAULT_DATA = {
     projId:'E-02',
     name:'Gen2 - Fleet Manager Web',
     cat:'HW-System Product',
-    progress:'Array mapping, site access, TOU Gen2 features on track. React migration in progress. Coordination with product team on 2H 2026 capacity roadmap.',
+    progress:'Array mapping, site access, TOU Gen2 features on track. React migration in progress. TOU fleet UI design completed including guidelines and example screens for multiple roles. Beta scope reprioritized to focus on Site Monitoring, Live Status, and Settings.',
     blockers:'',
-    dependency:'Product team coordination on 2H 2026 roadmap.',
-    decision:'',
-    risk:'React migration Q2 target.',
+    dependency:'',
+    decision:'Q.OMMAND Admin features (Remote Firmware Update) planned post-Beta.',
+    risk:'',
     owner:'Jason',
     target:'Beta Jun; GA Dec 2026',
-    focus:'Continue React migration; 2H roadmap coordination.',
+    focus:'Continue React migration; advance Site Monitoring, Live Status, Settings for Beta.',
     jira:'CPO Jira Board',
     status:'On Track'
   },
@@ -2289,14 +2321,14 @@ const DEFAULT_DATA = {
     projId:'E-02',
     name:'Gen2 - Q.Home App',
     cat:'HW-System Product',
-    progress:'Sprint Zero begun. Teams onboarding and completing technical setup. PRD/FRD reviews underway to prepare for Sprint 1.',
+    progress:'Sprint 1 kicked off with Wi-Fi Settings and UI enhancement features including product illustration, Energy flow, My page for Gen2 Home. Updates entering initial development.',
     blockers:'',
-    dependency:'Technical documentation begins next week.',
+    dependency:'Ongoing technical development.',
     decision:'',
     risk:'',
     owner:'Jason',
     target:'Beta Jun; GA Dec 2026',
-    focus:'Complete Sprint Zero; prepare for Sprint 1.',
+    focus:'Advance Sprint 1 features: Wi-Fi Settings, Energy flow, My page.',
     jira:'CPO Jira Board',
     status:'On Track'
   },
@@ -2305,111 +2337,127 @@ const DEFAULT_DATA = {
     projId:'E-03',
     name:'Gen1+2 - Installer App Consolidation',
     cat:'HW-System Product',
-    progress:'Development resumed in early April. Bridge screen development starts next week. Completion targeted end of June.',
+    progress:'Android completed feature flag Install Wizard and site creation integrations. iOS completed UI Module integration and continued design system and GEN1 module integration. Bridge screen development targeted end of June.',
     blockers:'',
-    dependency:'Bridge screen development starting next week.',
+    dependency:'',
     decision:'',
     risk:'Gen2 scope changes may affect consolidation timeline.',
     owner:'Jason',
     target:'End of June 2026',
-    focus:'Begin bridge screen development.',
+    focus:'Continue bridge screen development; maintain Gen2 alignment.',
     jira:'CPO Jira Board',
     status:'On Track'
   },
   {
-    id:'w9',
-    projId:'E-03',
-    name:'CCI Transition - Predict / Insight',
+    id:'w9a',
+    projId:'E-04',
+    name:'CCI - Insight (Maintenance)',
     cat:'Commercial Product',
-    progress:'Insight 5.1 release complete - stable state, minimal business continuity impact; SLA target end of May. Predict: stabilization workstream MVP1 started; login issue reviews in progress. MVP1 target May 5.',
-    blockers:'CCI Optimization role at risk pending hiring progress.',
-    dependency:'Xoriant Predict deliverables; Avigna handover continuity.',
+    progress:'5.2 release code freeze. Stage environment in progress. Planning to implement for 5.2 release. 5.3 release planning started.',
+    blockers:'',
+    dependency:'5.2 stage environment completion.',
     decision:'',
-    risk:'CCI Optimization hiring risk may impact delivery capacity.',
+    risk:'',
     owner:'Seth',
-    target:'Predict MVP1: May 5; Insight SLA: end of May',
-    focus:'Advance Predict MVP1; monitor Insight SLA; advance CCI Optimization hiring.',
+    target:'5.2 release ongoing; 5.3 planning',
+    focus:'Complete 5.2 stage; begin 5.3 planning.',
     jira:'CCI Jira Board',
     status:'On Track'
+  },
+  {
+    id:'w9b',
+    projId:'E-03',
+    name:'CCI - Predict (Stabilization)',
+    cat:'Commercial Product',
+    progress:'MVP1 in progress. On track for May 5 release. Ratchet tariff code under testing. Data modeling optimization at risk due to lack of subject matter expertise.',
+    blockers:'Sr Optimization engineer onboarding expected soon.',
+    dependency:'Sr Optimization engineer onboarding.',
+    decision:'',
+    risk:'Optimization part at risk due to subject matter expertise gap.',
+    owner:'Seth',
+    target:'MVP1: May 5 2026',
+    focus:'Advance MVP1; onboard Sr Optimization engineer; complete ratchet tariff testing.',
+    jira:'CCI Jira Board',
+    status:'Monitoring'
   },
   {
     id:'w10',
     projId:'B-10',
     name:'Omnidian Internalization (QSS O&M)',
     cat:'Business Module',
-    progress:'High-level scoping ongoing. BA assigned. Next week: first draft review.',
-    blockers:'',
-    dependency:'First draft review next week.',
+    progress:'Consolidation planning resource plan still pending. Kick-off date may be delayed. BA onboarding as contractor in progress.',
+    blockers:'Resource plan not finalized — kick-off date at risk.',
+    dependency:'Resource plan approval; BA contractor onboarding completion.',
     decision:'',
-    risk:'',
+    risk:'Kick-off date delay cascades to Dec 2026 target.',
     owner:'Sunil',
     target:'Dec 2026',
-    focus:'Complete high-level scoping; prepare first draft for review.',
+    focus:'Finalize resource plan; complete BA contractor onboarding.',
     jira:'PB Jira Board',
     status:'Monitoring'
   },
   {
     id:'w11',
     projId:'',
-    name:'CIO Recruitment and Org Capacity',
-    cat:'Maintenance',
-    progress:'18 open reqs, no positions on hold. Sr. Data Engineer, Architect, Optimization interviews ongoing. AI use case sessions underway. MS InTune setup completed; testing plan in progress.',
-    blockers:'CCI Optimization role hiring at risk.',
-    dependency:'HR pipeline; MS InTune testing plan.',
-    decision:'Exec awareness: CCI Optimization role at risk; hiring being monitored.',
-    risk:'CCI Optimization hiring risk may impact delivery capacity.',
-    owner:'Sujith',
-    target:'Ongoing',
-    focus:'Advance Sr. Data Engineer and Architect hiring; complete InTune testing plan.',
-    jira:'',
-    status:'On Track'
-  },
-  {
-    id:'w12',
-    projId:'',
-    name:'G&ES Divestiture - Infrastructure',
+    name:'G&ES Divestiture - Tech Separation',
     cat:'Consolidation',
-    progress:'Deal closure postponed to June (TBC). G&ES team took ownership of workstream conversations. CIO Office closed consolidated working sessions Apr 10. CIO Office owns Tech Separation - contingent on OEM API decision (business) and Data Policy guidance (legal).',
-    blockers:'OEM API structure decision pending business teams. Data Policy/Compliance guidance pending legal.',
-    dependency:'Business: OEM API structure. Legal: Data governance and PII handling.',
-    decision:'CIO Office will monitor dependencies and re-engage when decisions are made.',
-    risk:'9 open flags across contracts, OEM APIs, IP governance, shared services, data policy, and tech separation.',
+    progress:'Tech team proceeding with draft scope. Working to set up outsourced support org for Residential Applications. Most acute gap: DevOps/SRE requires additional staffing. Data Engineering needs added capacity and phased transition plan. Nagendra team fully onboarded with full data science team. Azure migration and data discrepancy actions in scoping.',
+    blockers:'OEM API structure decision (business) and Data Policy/Compliance guidance (legal) still pending — upstream blockers for full completion.',
+    dependency:'Business: OEM API structure. Legal: Data policy and compliance guidance.',
+    decision:'DevOps/SRE gap requires additional staffing to meet handoff timelines.',
+    risk:'DevOps/SRE and Data Engineering capacity gaps may impact handoff timeline.',
     owner:'Sujith',
-    target:'June 2026 (revised)',
-    focus:'Monitor OEM API and Legal decision dependencies; stand by for re-engagement.',
+    target:'June 2026 (TBC)',
+    focus:'Draft scope; set up outsourced Residential Applications support org; address DevOps/SRE gap.',
     jira:'',
     status:'Monitoring'
   },
   {
-    id:'w13',
+    id:'w12',
     projId:'',
     name:'Microsoft Tenant Consolidation',
     cat:'Consolidation',
-    progress:'InTune setup completed this week. Testing plan in progress. Collaboration with G&ES and Microsoft team.',
+    progress:'Mailbox and calendar consolidation trial in progress. Collaboration with G&ES and Microsoft team.',
     blockers:'',
-    dependency:'Testing plan completion.',
+    dependency:'Trial completion.',
     decision:'',
     risk:'',
     owner:'Nagendra',
     target:'TBD',
-    focus:'Complete testing plan; advance tenant consolidation execution.',
+    focus:'Complete mailbox and calendar consolidation trial.',
+    jira:'',
+    status:'On Track'
+  },
+  {
+    id:'w13',
+    projId:'',
+    name:'AI Strategy and Roadmap',
+    cat:'Maintenance',
+    progress:'Finalizing AI tool selection for individual productivity IT Operations. AI use case sessions ongoing with business teams.',
+    blockers:'',
+    dependency:'AI tool selection finalization.',
+    decision:'',
+    risk:'',
+    owner:'Sujith',
+    target:'Q2 2026',
+    focus:'Finalize AI tool selection; continue AI use case sessions.',
     jira:'',
     status:'On Track'
   },
   {
     id:'w14',
-    projId:'B-11',
-    name:'Enfin - Trinity Installer Onboarding',
-    cat:'Business Module',
-    progress:'Phase I (May 4 release) on track. Trinity change order tolerance update complete. EnFin Design API Week 2: Authentication Setup and Initial API Development complete. Postman Collection shared with Trinity. PA, CT, NJ, MA contracts ready.',
-    blockers:'Limited visibility into Trinity integration progress while Trinity configures webhook notifications.',
-    dependency:'Trinity webhook configuration; Phase I May 4 business support.',
-    decision:'Continued business support needed to ensure Trinity remains on track for May 4.',
-    risk:'Trinity webhook configuration visibility gap could surface late integration issues.',
-    owner:'Sunil',
-    target:'Phase I: May 4 2026',
-    focus:'EnFin Design API Week 3 - Milestone API ready for testing. Monitor Trinity Phase I readiness.',
-    jira:'enfin.atlassian.net',
+    projId:'',
+    name:'Cybersecurity - Gen3 Certification',
+    cat:'Maintenance',
+    progress:'Target Gen3 cybersecurity certification (2900-1) by Apr 24. 2900-1 Draft summary sent to Qcells for review. Prioritized endpoints list sent to HQ team for pen testing. HQ security team visiting Apr 29 - May 8.',
+    blockers:'Uncertainty around whether to move forward with 2941 for Gen4.',
+    dependency:'Qcells review of 2900-1 draft summary; pen testing by HQ team.',
+    decision:'Decision needed on Gen4 2941 certification path.',
+    risk:'',
+    owner:'Jason',
+    target:'Apr 24 2026 (2900-1)',
+    focus:'Complete 2900-1 certification; prepare content for HQ security team visit Apr 29.',
+    jira:'',
     status:'On Track'
   }
   ],
@@ -2982,6 +3030,203 @@ const DEFAULT_DATA = {
     name:'Microsoft Tenant Consolidation',
     status:'On Track',
     progress:'InTune setup pending. Testing plan started.'
+  }]
+  }
+  ,
+  {
+    weekId:'wh_w2_apr_2026',
+    weekLabel:'W2 of April (Apr 6-10, 2026)',
+    weekStart:'2026-04-06',
+    archivedAt:'2026-04-13T09:00:00.000Z',
+    notes:'W2 Apr: QDD BPR complete; Insight 5.1 stable; Predict MVP1 started; CCI sessions closed; Trinity Phase I on track',
+    snapshot:[  {
+    id:'w1',
+    projId:'B-08',
+    name:'Enfin Data Integrity - DCA/FEOC TF',
+    status:'On Track',
+    progress:'7 tickets merged. Remaining on hold pending business decision.'
+  },  {
+    id:'w1b',
+    projId:'B-11-03',
+    name:'Project Clarity (Enfin)',
+    status:'On Track',
+    progress:'Strong alignment confirmed. PA team Miro comments received.'
+  },  {
+    id:'w2',
+    projId:'B-06',
+    name:'QDD - Rootstock Implementation',
+    status:'On Track',
+    progress:'BPR workshop held Apr 7-9. Requirements communicated.'
+  },  {
+    id:'w3',
+    projId:'C-02',
+    name:'Proposal Service (Solo / Cosmos)',
+    status:'Monitoring',
+    progress:'EnFin response expected Apr 10. Contract extension being addressed.'
+  },  {
+    id:'w4',
+    projId:'C-01',
+    name:'Cosmos - Strategy and Roadmap',
+    status:'Monitoring',
+    progress:'BU alignment meetings completed. Value props ongoing.'
+  },  {
+    id:'w5',
+    projId:'E-02',
+    name:'Gen2 - Installer App',
+    status:'Monitoring',
+    progress:'Pre-Alpha testing completed. Two-week sprints begun.'
+  },  {
+    id:'w6',
+    projId:'E-02',
+    name:'Gen2 - Fleet Manager Web',
+    status:'On Track',
+    progress:'React migration in progress. 2H roadmap coordination ongoing.'
+  },  {
+    id:'w7',
+    projId:'E-02',
+    name:'Gen2 - Q.Home App',
+    status:'On Track',
+    progress:'Sprint Zero begun. PRD/FRD reviews underway.'
+  },  {
+    id:'w8',
+    projId:'E-03',
+    name:'Gen1+2 - Installer App Consolidation',
+    status:'On Track',
+    progress:'Bridge screen development started.'
+  },  {
+    id:'w9',
+    projId:'E-03',
+    name:'CCI Transition - Predict / Insight',
+    status:'On Track',
+    progress:'Insight 5.1 stable. Predict MVP1 started, target May 5.'
+  },  {
+    id:'w10',
+    projId:'B-10',
+    name:'Omnidian Internalization (QSS O&M)',
+    status:'Monitoring',
+    progress:'High-level scoping ongoing. BA assigned.'
+  },  {
+    id:'w11',
+    projId:'',
+    name:'CIO Recruitment & Org Capacity',
+    status:'On Track',
+    progress:'18 open reqs. InTune setup completed.'
+  },  {
+    id:'w12',
+    projId:'',
+    name:'G&ES Divestiture - Infrastructure',
+    status:'Monitoring',
+    progress:'CIO Office closed consolidated sessions Apr 10. Monitoring upstream decisions.'
+  },  {
+    id:'w13',
+    projId:'',
+    name:'Microsoft Tenant Consolidation',
+    status:'On Track',
+    progress:'InTune setup completed. Testing plan in progress.'
+  },  {
+    id:'w14',
+    projId:'B-11',
+    name:'Enfin - Trinity Installer Onboarding',
+    status:'On Track',
+    progress:'Phase I on track. EnFin Design API Week 2 complete.'
+  }]
+  },
+  {
+    weekId:'wh_w3_apr_2026',
+    weekLabel:'W3 of April (Apr 13-17, 2026)',
+    weekStart:'2026-04-13',
+    archivedAt:'2026-04-20T09:00:00.000Z',
+    notes:'W3 Apr: Gen2 Alpha delayed by validation req; Proposal Service at risk (early July); QDD refocus proposal; New Homes Portal kicked off; Cosmos planning',
+    snapshot:[  {
+    id:'w1',
+    projId:'B-08',
+    name:'Enfin Data Integrity - DCA/FEOC TF',
+    status:'Monitoring',
+    progress:'Ticket review and prioritization meeting scheduled. 49 tickets mapped from biz and tech.'
+  },  {
+    id:'w1b',
+    projId:'B-11-03',
+    name:'Project Clarity (Enfin)',
+    status:'On Track',
+    progress:'Sizing and cost estimation in progress with CK team.'
+  },  {
+    id:'w2',
+    projId:'B-06',
+    name:'QDD - Rootstock Implementation',
+    status:'On Track',
+    progress:'Official kick-off progressing. Rootstock BPR complete.'
+  },  {
+    id:'w3',
+    projId:'C-02',
+    name:'Proposal Service (Solo / Cosmos)',
+    status:'Blocked',
+    progress:'EnFin commercial agreement pending redlines. Earliest enablement early July.'
+  },  {
+    id:'w4',
+    projId:'C-01',
+    name:'Cosmos - Strategy and Roadmap',
+    status:'Monitoring',
+    progress:'Value props and use case discussions ongoing.'
+  },  {
+    id:'w5',
+    projId:'E-02',
+    name:'Gen2 - Installer App',
+    status:'Monitoring',
+    progress:'Validation feature impacted by delayed requirements. Alpha at risk.'
+  },  {
+    id:'w6',
+    projId:'E-02',
+    name:'Gen2 - Fleet Manager Web',
+    status:'On Track',
+    progress:'Array mapping, TOU features on track. React migration in progress.'
+  },  {
+    id:'w7',
+    projId:'E-02',
+    name:'Gen2 - Q.Home App',
+    status:'On Track',
+    progress:'Sprint 1 preparing to kick off.'
+  },  {
+    id:'w8',
+    projId:'E-03',
+    name:'Gen1+2 - Installer App Consolidation',
+    status:'On Track',
+    progress:'Bridge screen development in progress.'
+  },  {
+    id:'w9',
+    projId:'E-03',
+    name:'CCI Transition - Predict / Insight',
+    status:'On Track',
+    progress:'Predict MVP1 on track May 5. Insight 5.2 in progress.'
+  },  {
+    id:'w10',
+    projId:'B-10',
+    name:'Omnidian Internalization (QSS O&M)',
+    status:'Monitoring',
+    progress:'Resource plan pending. BA onboarding in progress.'
+  },  {
+    id:'w11',
+    projId:'',
+    name:'CIO Recruitment & Org Capacity',
+    status:'On Track',
+    progress:'18 open reqs. InTune testing in progress.'
+  },  {
+    id:'w12',
+    projId:'',
+    name:'G&ES Divestiture - Infrastructure',
+    status:'Monitoring',
+    progress:'Tech separation scope drafting. DevOps/SRE gap identified.'
+  },  {
+    id:'w13',
+    projId:'',
+    name:'Microsoft Tenant Consolidation',
+    status:'On Track',
+    progress:'Mailbox and calendar consolidation trial in progress.'
+  },  {
+    id:'w14',
+    projId:'B-11',
+    name:'Enfin - Trinity Installer Onboarding',
+    status:'On Track',
+    progress:'Phase I May 4 release on track.'
   }]
   }
   ]
